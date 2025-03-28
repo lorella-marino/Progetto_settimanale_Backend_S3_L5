@@ -14,6 +14,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "prestiti")
 
+@NamedQuery(name = "PrestitoFindScadutiNonRestituiti", query = "SELECT e FROM ElementoCatalogo e WHERE e.prestito IS NOT NULL AND e.prestito.dataRestituzioneEffettiva IS NULL AND e.prestito.dataRestituzionePrevista < CURRENT_DATE")
 public class Prestito {
 
     @Id

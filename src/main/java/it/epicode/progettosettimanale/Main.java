@@ -86,12 +86,12 @@ public class Main {
 
         System.out.println();
         System.out.println("-- Find elementi in prestito tramite numero tessera--");
-        List<ElementoCatalogo> elementi5 =  elementoCatalogoDAO.getElementoFindElementiInPrestito(2L);
+        List<ElementoCatalogo> elementi5 =  elementoCatalogoDAO.getElementoFindInPrestito(2L);
         elementi5.forEach(System.out::println);
 
         System.out.println();
         System.out.println("-- Find prestiti scaduti e non restituiti--");
-        List<Prestito> elementi6 =  elementoCatalogoDAO.getElementoFindPrestitiScadutiNonRestituiti();
+        List<Prestito> elementi6 =  elementoCatalogoDAO.getPrestitoFindScadutiNonRestituiti();
         elementi6.forEach(System.out::println);
 
 

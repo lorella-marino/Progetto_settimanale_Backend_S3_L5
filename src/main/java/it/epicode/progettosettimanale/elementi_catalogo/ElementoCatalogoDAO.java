@@ -55,13 +55,13 @@ public class ElementoCatalogoDAO {
                 .getResultList();
     }
 
-    public List<ElementoCatalogo> getElementoFindElementiInPrestito(Long numeroTessera) {
+    public List<ElementoCatalogo> getElementoFindInPrestito(Long numeroTessera) {
         return em.createQuery("SELECT p.elementoPrestato FROM Prestito p WHERE p.utente.numeroTessera = :numeroTessera AND p.dataRestituzioneEffettiva IS NULL", ElementoCatalogo.class)
                 .setParameter("numeroTessera", numeroTessera)
                 .getResultList();
     }
 
-    public List<Prestito> getElementoFindPrestitiScadutiNonRestituiti () {
+    public List<Prestito> getPrestitoFindScadutiNonRestituiti () {
         return em.createQuery("SELECT p FROM Prestito p WHERE p.dataRestituzioneEffettiva IS NULL AND p.dataRestituzionePrevista < CURRENT_DATE", Prestito.class)
                 .getResultList();
     }

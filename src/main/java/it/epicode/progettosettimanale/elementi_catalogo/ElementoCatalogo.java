@@ -18,8 +18,8 @@ import lombok.experimental.SuperBuilder;
 @NamedQuery(name = "ElementoFindByAnnoPubblicazione", query = "SELECT e FROM ElementoCatalogo e WHERE e.annoPubblicazione = :annoPubblicazione")
 @NamedQuery(name = "ElementoFindByAutore", query = "SELECT e FROM Libro e WHERE e.autore = :autore")
 @NamedQuery(name = "ElementoFindByTitolo", query = "SELECT e FROM ElementoCatalogo e WHERE e.titolo LIKE :titolo")
-@NamedQuery(name = "ElementoFindElementiInPrestito", query = "SELECT e FROM ElementoCatalogo e WHERE e.prestito IS NOT NULL AND e.prestito.dataRestituzioneEffettiva IS NULL AND e.prestito.utente.numeroTessera = :numeroTessera")
-@NamedQuery(name = "ElementoFindPrestitiScadutiNonRestituiti", query = "SELECT e FROM ElementoCatalogo e WHERE e.prestito IS NOT NULL AND e.prestito.dataRestituzioneEffettiva IS NULL AND e.prestito.dataRestituzionePrevista < CURRENT_DATE")
+@NamedQuery(name = "ElementoFindInPrestito", query = "SELECT e FROM ElementoCatalogo e WHERE e.prestito IS NOT NULL AND e.prestito.dataRestituzioneEffettiva IS NULL AND e.prestito.utente.numeroTessera = :numeroTessera")
+
 
 public abstract class ElementoCatalogo {
 
