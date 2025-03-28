@@ -1,6 +1,7 @@
-package it.epicode.progettosettimanale.elementi_catalogo;
+package it.epicode.progettosettimanale.elementi_catalogo.rivista;
 
-import it.epicode.progettosettimanale.elementi_catalogo.periodicita.Periodicita;
+import it.epicode.progettosettimanale.elementi_catalogo.ElementoCatalogo;
+import it.epicode.progettosettimanale.elementi_catalogo.rivista.periodicita.Periodicita;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

@@ -2,9 +2,9 @@ package it.epicode.progettosettimanale;
 
 import it.epicode.progettosettimanale.elementi_catalogo.ElementoCatalogo;
 import it.epicode.progettosettimanale.elementi_catalogo.ElementoCatalogoDAO;
-import it.epicode.progettosettimanale.elementi_catalogo.Libro;
-import it.epicode.progettosettimanale.elementi_catalogo.Rivista;
-import it.epicode.progettosettimanale.elementi_catalogo.periodicita.Periodicita;
+import it.epicode.progettosettimanale.elementi_catalogo.libro.Libro;
+import it.epicode.progettosettimanale.elementi_catalogo.rivista.Rivista;
+import it.epicode.progettosettimanale.elementi_catalogo.rivista.periodicita.Periodicita;
 import it.epicode.progettosettimanale.prestiti.Prestito;
 import it.epicode.progettosettimanale.prestiti.PrestitoDAO;
 import it.epicode.progettosettimanale.utenti.Utente;
@@ -44,12 +44,14 @@ public class Main {
 
         em.getTransaction ().begin();
 
+        //AGGIUNTA ELEMENTO
         elementoCatalogoDAO.insert(libro1);
         elementoCatalogoDAO.insert(libro2);
         elementoCatalogoDAO.insert(libro3);
         elementoCatalogoDAO.insert(rivista1);
         elementoCatalogoDAO.insert(rivista2);
         elementoCatalogoDAO.insert(rivista3);
+
         utenteDAO.insert(utente1);
         utenteDAO.insert(utente2);
         prestitoDAO.insert(prestito1);
@@ -57,6 +59,7 @@ public class Main {
         prestitoDAO.insert(prestito3);
         prestitoDAO.insert(prestito4);
 
+        //RIMOZIONE ELEMENTO tramite ISBN
         elementoCatalogoDAO.delete(6L);
 
         em.getTransaction ().commit();
@@ -90,7 +93,6 @@ public class Main {
         System.out.println("-- Find prestiti scaduti e non restituiti--");
         List<Prestito> elementi6 =  elementoCatalogoDAO.getElementoFindPrestitiScadutiNonRestituiti();
         elementi6.forEach(System.out::println);
-
 
 
         em.close();

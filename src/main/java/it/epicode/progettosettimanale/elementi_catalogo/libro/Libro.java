@@ -1,5 +1,6 @@
-package it.epicode.progettosettimanale.elementi_catalogo;
+package it.epicode.progettosettimanale.elementi_catalogo.libro;
 
+import it.epicode.progettosettimanale.elementi_catalogo.ElementoCatalogo;
 import jakarta.persistence.Entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
