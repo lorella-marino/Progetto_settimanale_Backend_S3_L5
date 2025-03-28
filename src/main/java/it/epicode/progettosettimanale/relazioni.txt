@@ -1,0 +1,6 @@
+
+Utente 1 --- M Prestiti
+Un utente può avere molti prestiti
+
+Prestito 1 --- 1 Elemento
+Ogni prestito può avere solo un elemento del catalogo
